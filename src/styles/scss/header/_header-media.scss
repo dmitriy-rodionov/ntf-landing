@@ -1,0 +1,159 @@
+@media(max-width: 1200px) {
+    .container{
+        width: 960px;
+    }
+    .header{
+        &__title{
+            margin-top: 80px;
+        }
+        &__ellipse-center{
+            width: 500px;
+            height: 500px;
+            left: 51%;
+            top: 172px;
+        }
+        &__ellipse-fifth{
+            left: 22%;
+        }
+    }
+    .controls{
+        bottom: 7%;
+    }
+    .main-logo{
+        width: 500px;
+        height: 540px;
+    }
+}
+
+@media(max-width: 992px){
+    .container{
+        width: 720px;
+    }
+    .header{
+        &__ellipse-fifth{
+            width: 850px;
+            height: 850px;
+            top: 0;
+        }
+        &__ellipse-center{
+            width: 400px;
+            height: 400px;
+            left: 49%;
+            top: 26%;
+        }
+        &__title{
+            font-size: 54px;
+        }
+        &__counter{
+            width: 380px;
+        }
+    }
+    .main-logo{
+        width: 400px;
+        height: 420px;
+    }
+    .button{
+        width: 150px;
+        height: 50px;
+        &_transparent{
+            &:before{
+                width: 155px;
+                height: 54px;
+            }
+        }
+    }
+    .descr{
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 768px) {
+    .container{
+        width: 540px;
+    }
+    .navigation{
+        &__wrapper{
+            display: none;
+        }
+    }
+    .descr{
+        font-size: 13px;
+    }
+    .header{
+        &__ellipse-center{
+            width: 300px;
+            height: 300px;
+            left: 62%;
+            top: 31%;
+            z-index: -1;
+        }
+        &__ellipse-fifth{
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 81%;
+        }
+    }
+    .main-logo{
+        width: 280px;
+        height: 300px;
+    }
+}
+
+@media(max-width: 576px) {
+    .container{
+        width: 100%;
+    }
+    .controls{
+        bottom: 5%;
+    }
+    .header{
+        padding-top: 5px;
+        padding-left: 5px;
+        &__title{
+            margin-top: 15px;
+            font-size: 40px;
+        }
+        &__btns-wrapper{
+            display: flex;
+            flex-direction: column;
+        }
+        &__counter{
+            position: absolute;
+            bottom: 17%;
+            margin-top: 5px;
+            padding: 5px;
+            width: 275px;
+            &-item{
+                &:first-child{
+                    &:after{
+                        height: 45px;
+                        left: 105px;
+                    }
+                }
+            }
+            &-title{
+                font-size: 12px;
+            }
+            &-num{
+                font-size: 23px;
+            }
+            &-descr{
+                font-size: 12px;
+            }
+        }
+    }
+    .button{
+        width: 100px;
+        height: 40px;
+        font-size: 13px;
+        &_transparent{
+            margin-left: 0;
+            margin-top: 10px;
+            &::before{
+                width: 104px;
+                height: 44px;
+            }
+        }
+    }
+}

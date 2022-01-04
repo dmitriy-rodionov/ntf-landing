@@ -1,0 +1,46 @@
+.quality{
+    height: 100vh;
+    padding-top: 130px;
+    position: relative;
+    overflow: hidden;
+    &__wrapper{
+        display: flex;
+        align-items: center;
+    }
+    &__images{
+        display: grid;
+        grid-template-columns: repeat(2, 250px);
+        grid-template-rows: repeat(2, 250px);
+        column-gap: 27px;
+        row-gap: 20px;
+    }
+    &__text{
+        margin-left: 118px;
+    }
+    &__descr{
+        margin-top: 25px;
+    }
+    &__btn{
+        margin-top: 35px;
+    }
+    &__ellipse{
+        position: absolute;
+        width: 984px;
+        height: 929px;
+        left: -316px;
+        top: -774px;
+        background: rgba(203, 71, 160, 0.3);
+        filter: blur(472px);
+        // border-radius: 100%;
+        z-index: -1;
+        &-second{
+            position: absolute;
+            width: 629px;
+            height: 594px;
+            right: 1px;
+            bottom: 1px;
+            background: rgba(0, 255, 133, 0.2);
+            filter: blur(400px);
+        }
+    }
+}
