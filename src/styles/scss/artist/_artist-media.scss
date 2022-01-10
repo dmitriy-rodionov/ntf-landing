@@ -1,0 +1,57 @@
+@media(max-width: 1200px) {
+
+}
+
+@media(max-width: 992px){
+    .artist{
+        padding: 80px 0;
+        height: 100%;
+        overflow-y: scroll;
+        &__items{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__item{
+            margin-top: 15px;
+            width: 50%;
+            margin-right: 0px;
+        }
+    }
+}
+
+@media(max-width: 768px){
+    .artist{
+        &__item{
+            width: 60%;
+        }
+        &__photo{
+            top: 28%;
+        }
+    }
+}
+
+@media(max-width: 576px){
+    .artist{
+        padding: 65px 0;
+        &__items{
+            margin-top: 15px;
+        }
+        &__item{
+            width: 90%;
+        }
+        &__title{
+            font-size: 30px;
+        }
+        &__photo{
+            top: 34%;
+        }
+    }
+}
+
+@media(max-width: 350px) {
+    .artist{
+        &__photo{
+            top: 25%;
+        }
+    }
+}

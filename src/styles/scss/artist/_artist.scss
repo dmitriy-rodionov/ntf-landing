@@ -1,0 +1,77 @@
+.artist{
+    min-height: 100vh;
+    padding-top: 113px;
+    overflow: hidden;
+    position: relative;
+    &__title{
+        text-align: center;
+    }
+    &__items{
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item{
+        position: relative;
+        padding: 30px;
+        background: rgba(46, 47, 64, 0.3);
+        backdrop-filter: blur(4px);
+        border-radius: 2px;
+        margin-right: 24px;
+        &:last-child{
+            margin-right: 0px;
+        }
+        &-title{
+            margin-top: 61px;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 160%;
+            color: #F8F6FA;
+            text-align: center;
+        }
+        &-descr{
+            margin-top: 15px;
+            font-size: 16px;
+            line-height: 160%;
+            color: #F8F6FA;
+            opacity: 0.6;
+            text-align: center;
+        }
+    }
+    &__img{
+        width: 100%;
+    }
+    &__photo{
+        width: 93px;
+        height: 93px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 30%;
+    }
+    &__btn{
+        display: block;
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+    &__ellipce{
+        position: absolute;
+        width: 678px;
+        height: 640px;
+        left: -293px;
+        top: 1px;
+        background: rgba(203, 71, 160, 0.3);
+        filter: blur(472px);
+        &-second{
+            position: absolute;
+            width: 731px;
+            height: 690px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 255, 133, 0.15);
+            filter: blur(350px);
+        }
+    }
+    
+}
