@@ -1,0 +1,39 @@
+.create{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    &__ellipce{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        &-second{
+            position: absolute;
+            width: 731px;
+            height: 690px;
+            left: 30%;
+            top: 100%;
+            background: rgba(0, 255, 133, 0.15);
+            filter: blur(450px);
+        }
+    }
+    &__wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__title{
+        text-align: center;
+    }
+    &__descr{
+        margin-top: 25px;
+        text-align: center;
+    }
+    &__btn{
+        display: block;
+        margin: 0 auto;
+        margin-top: 35px;
+    }
+}
