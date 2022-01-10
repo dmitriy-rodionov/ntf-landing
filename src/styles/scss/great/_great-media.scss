@@ -1,0 +1,98 @@
+@media(max-width: 1200px) {
+    .great{
+        &__list{
+            grid-template-columns: repeat(2, 300px);
+            grid-template-rows: repeat(2, 210px);
+            &-title{
+                margin-top: 55px;
+            }
+        }
+    }
+}
+
+@media(max-width: 992px){
+    .great{
+        &__list{
+            grid-template-columns: repeat(2, 200px);
+            grid-template-rows: repeat(2, 250px);
+            row-gap: 65px;
+            &-item{
+                padding: 0px 15px 15px 15px;
+            }
+            &-img{
+                width: 90px;
+                height: 90px;
+                top: -40%;
+            }
+            &-ellipse{
+                width: 100px;
+                height: 100px;
+                top: -30px;
+                filter: blur(60px);
+            }
+        }
+        &__text{
+            margin-right: 11px;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .great{
+        padding-top: 30px;
+        &__wrapper{
+            flex-direction: column;
+            justify-content: center;
+        }
+        &__text{
+            text-align: center;
+        }
+        &__btn{
+            margin: 0 auto;
+            margin-top: 35px;
+        }
+        &__list{
+            margin: 0 auto;
+            margin-top: 15px;
+            grid-template-columns: repeat(2, 220px);
+            grid-template-rows: repeat(2, 175px);
+            column-gap: 30px;
+            row-gap: 32px;
+            &-img{
+                width: 60px;
+                height: 60px;
+                top: -25%;
+            }
+            &-title{
+                font-size: 17px;
+            }
+            &-descr{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media(max-width: 576px){
+    .great{
+        overflow: scroll;
+        &__text{
+            margin: 0 auto;
+        }
+        &__list{
+            grid-template-columns: repeat(2, 153px);
+            grid-template-rows: repeat(2, 170px);
+            column-gap: 10px;
+            &-item{
+                padding: 0px 5px 4px 5px;
+            }
+            &-img{
+                width: 45px;
+                height: 45px;
+            }
+            &-title{
+                margin-top: 27px;
+            }
+        }
+    }
+}

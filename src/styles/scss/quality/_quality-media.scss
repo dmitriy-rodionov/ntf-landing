@@ -49,6 +49,7 @@
 
 @media(max-width: 576px) {
     .quality{
+        overflow: auto;
         &__images{
             grid-template-columns: repeat(2, 140px);
             grid-template-rows: repeat(2, 150px);
