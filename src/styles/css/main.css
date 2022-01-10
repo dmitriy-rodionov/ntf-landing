@@ -741,7 +741,7 @@ body {
 }
 @media (max-width: 576px) {
   .quality {
-    overflow: auto;
+    overflow-y: auto;
   }
   .quality__images {
     grid-template-columns: repeat(2, 140px);
