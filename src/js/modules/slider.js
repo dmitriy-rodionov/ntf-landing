@@ -18,6 +18,7 @@ const slider = () => {
     startIndex: 0,
   });
 
+  tinySlider.events.on('transitionStart', toggleAnimate);
   
 function toggleAnimate() {
 
@@ -52,6 +53,5 @@ function toggleAnimate() {
   }
 
 }
-  tinySlider.events.on('transitionStart', toggleAnimate);
 }
 export default slider;

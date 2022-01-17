@@ -3777,6 +3777,7 @@ const slider = () => {
     startIndex: 0,
   });
 
+  tinySlider.events.on('transitionStart', toggleAnimate);
   
 function toggleAnimate() {
 
@@ -3811,7 +3812,6 @@ function toggleAnimate() {
   }
 
 }
-  tinySlider.events.on('transitionStart', toggleAnimate);
 }
 /* harmony default export */ __webpack_exports__["default"] = (slider);
 
@@ -3864,6 +3864,67 @@ const tabs = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (tabs);
+
+/***/ }),
+
+/***/ "./src/js/modules/timer.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/timer.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+const timer = () => {
+    const deadLine = '2022-01-20';
+
+    function getTimeRemaining(end) {
+        const t = Date.parse(end) - Date.parse(new Date()),
+              hours = Math.floor(t / (1000 * 60 *60)),
+              minutes = Math.floor((t / 1000 / 60) % 60),
+              seconds = Math.floor((t / 1000) % 60);
+        
+        return {
+            'total': t,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds,
+        }
+    }
+
+    function getZero(num) {
+        if(num >= 0 && num < 10) {
+            return `0${num}`
+        } else {
+            return num;
+        }
+    }
+
+    function setClock(selector, endtime) {
+        const timer = document.querySelector(selector),
+              hours = timer.querySelector('#hours'),
+              minutes = timer.querySelector('#minutes'),
+              seconds = timer.querySelector('#seconds'),
+              timeInterval = setInterval(updateClock, 1000);
+
+        updateClock();
+        
+        function updateClock() {
+            const t = getTimeRemaining(endtime);
+
+            hours.textContent = getZero(t.hours);
+            minutes.textContent = getZero(t.minutes);
+            seconds.textContent = getZero(t.seconds);
+
+            if(t.total <= 0) {
+                clearInterval(timeInterval);
+            }
+        }
+    }
+
+    setClock('.header__counter', deadLine);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (timer);
 
 /***/ })
 
@@ -3932,11 +3993,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/timer */ "./src/js/modules/timer.js");
+
 
 
 
 (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
 (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_1__["default"])();
+(0,_modules_timer__WEBPACK_IMPORTED_MODULE_2__["default"])();
 }();
 /******/ })()
 ;
