@@ -14,8 +14,25 @@
         column-gap: 27px;
         row-gap: 20px;
     }
+    &__image{
+        &_first-active{
+            animation: fadeInTopLeft 0.5s;
+        }
+        &_second-active{
+            animation: fadeInTopRight 0.5s;
+        }
+        &_third-active{
+            animation: fadeInBottomLeft 0.5s;
+        }
+        &_fourth-active{
+            animation: fadeInBottomRight 0.5s;
+        }
+    }
     &__text{
         margin-left: 118px;
+        &_active{
+            animation: fadeInRight 0.5s;
+        }
     }
     &__descr{
         margin-top: 25px;

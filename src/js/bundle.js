@@ -3683,6 +3683,71 @@ exports.tns = tns;
 
 /***/ }),
 
+/***/ "./src/js/modules/animations.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/animations.js ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addAnimate": function() { return /* binding */ addAnimate; },
+/* harmony export */   "removeAnimate": function() { return /* binding */ removeAnimate; },
+/* harmony export */   "addAnimMultipleBlocks": function() { return /* binding */ addAnimMultipleBlocks; },
+/* harmony export */   "removeAnimMultipleBlocks": function() { return /* binding */ removeAnimMultipleBlocks; }
+/* harmony export */ });
+
+
+function addAnimate(selector) {
+    document.querySelector(selector).classList.add(selector.slice(1) + '_active');
+}
+
+function removeAnimate(selector) {
+    document.querySelector(selector).classList.remove(selector.slice(1) + '_active');
+}
+    
+function addAnimMultipleBlocks(selector) {
+    document.querySelectorAll(selector).forEach((item, i) => {
+        if(i == 0) {
+        item.classList.add(selector.slice(1) + '_first-active');
+        }
+        if(i == 1) {
+        item.classList.add(selector.slice(1) + '_second-active');
+        }
+        if(i == 2) {
+        item.classList.add(selector.slice(1) + '_third-active');
+        }
+        if(i == 3) {
+        item.classList.add(selector.slice(1) + '_fourth-active');
+        }
+    });
+}
+    
+function removeAnimMultipleBlocks(selector) {
+    document.querySelectorAll(selector).forEach((item, i) => {
+        if(i == 0) {
+        item.classList.remove(selector.slice(1) + '_first-active');
+        }
+        if(i == 1) {
+        item.classList.remove(selector.slice(1) + '_second-active');
+        }
+        if(i == 2) {
+        item.classList.remove(selector.slice(1) + '_third-active');
+        }
+        if(i == 3) {
+        item.classList.remove(selector.slice(1) + '_fourth-active');
+        }
+    });
+}
+
+
+
+
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/slider.js":
 /*!**********************************!*\
   !*** ./src/js/modules/slider.js ***!
@@ -3691,6 +3756,11 @@ exports.tns = tns;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tiny_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tiny-slider */ "./node_modules/tiny-slider/dist/tiny-slider.js");
+/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animations */ "./src/js/modules/animations.js");
+
+
+
+
 
 
 const slider = () => {
@@ -3704,10 +3774,96 @@ const slider = () => {
     nav: false,
     mouseDrag: true,
     autoHeight: true,
+    startIndex: 0,
   });
-}
 
+  
+function toggleAnimate() {
+
+  if(tinySlider.getInfo().displayIndex == 1) {
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.addAnimate)('.header__title');
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.addAnimate)('.main-logo');
+  } else {
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.removeAnimate)('.header__title');
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.removeAnimate)('.main-logo');
+  }
+
+  if(tinySlider.getInfo().displayIndex == 2) {
+    document.querySelector('.quality__text').classList.add('quality__text_active');
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.addAnimMultipleBlocks)('.quality__image');
+  } else {
+    document.querySelector('.quality__text').classList.remove('quality__text_active');
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.removeAnimMultipleBlocks)('.quality__image');
+  }
+
+  if(tinySlider.getInfo().displayIndex == 3) {
+    document.querySelector('.great__text').classList.add('great__text_active');
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.addAnimMultipleBlocks)('.great__list-item');
+  } else {
+    document.querySelector('.great__text').classList.remove('great__text_active');
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.removeAnimMultipleBlocks)('.great__list-item');
+  }
+
+  if(tinySlider.getInfo().displayIndex == 5) {
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.addAnimMultipleBlocks)('.artist__item');
+  } else {
+    (0,_animations__WEBPACK_IMPORTED_MODULE_1__.removeAnimMultipleBlocks)('.artist__item');
+  }
+
+}
+  tinySlider.events.on('transitionStart', toggleAnimate);
+}
 /* harmony default export */ __webpack_exports__["default"] = (slider);
+
+/***/ }),
+
+/***/ "./src/js/modules/tabs.js":
+/*!********************************!*\
+  !*** ./src/js/modules/tabs.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+
+const tabs = () => {
+    const tabBtns = document.querySelectorAll('.special__btn'),
+          tabItems = document.querySelectorAll('.special__items'),
+          btnsWrapper = document.querySelector('.special__btns');
+    
+    tabBtns.forEach((item, i) => {
+        if(i == 1) {
+            item.classList.add('special__btn_active');
+        } else {
+            item.classList.remove('special__btn_active');
+        }
+    });
+
+    showTabs(1);
+
+    btnsWrapper.addEventListener('click', (e) => {
+        let target = e.target;
+        tabBtns.forEach((item, i) => {
+            item.classList.remove('special__btn_active');
+            if(target == item) {
+                item.classList.add('special__btn_active');
+                showTabs(i);
+            }
+        });
+    });
+
+    function showTabs(r) {
+        tabItems.forEach((item, i) => {
+            if(i == r) {
+                item.classList.add('special__items_active');
+            } else {
+                item.classList.remove('special__items_active');
+            }
+        });
+    }
+
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (tabs);
 
 /***/ })
 
@@ -3738,6 +3894,23 @@ const slider = () => {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -3758,9 +3931,12 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+
 
 
 (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_modules_tabs__WEBPACK_IMPORTED_MODULE_1__["default"])();
 }();
 /******/ })()
 ;

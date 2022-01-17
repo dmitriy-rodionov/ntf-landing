@@ -10,6 +10,9 @@
         flex-direction: column;
         justify-content: center;
         margin-right: 36px;
+        &_active{
+            animation: fadeInLeft 0.5s;
+        }
     }
     &__descr{
         margin-top: 25px;
@@ -30,6 +33,18 @@
             backdrop-filter: blur(4px);
             border-radius: 2px;
             position: relative;
+            &_first-active{
+                animation: fadeInTopLeft 0.5s;
+            }
+            &_second-active{
+                animation: fadeInTopRight 0.5s;
+            }
+            &_third-active{
+                animation: fadeInBottomLeft 0.5s;
+            }
+            &_fourth-active{
+                animation: fadeInBottomRight 0.5s;
+            }
         }
         &-img{
             position: absolute;

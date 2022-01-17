@@ -18,6 +18,15 @@
         backdrop-filter: blur(4px);
         border-radius: 2px;
         margin-right: 24px;
+        &_first-active{
+            animation: backInLeft 0.5s;
+        }
+        &_second-active{
+            animation: backInUp 0.5s;
+        }
+        &_third-active{
+            animation: backInRight 0.5s;
+        }
         &:last-child{
             margin-right: 0px;
         }

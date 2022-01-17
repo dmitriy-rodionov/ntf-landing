@@ -6,6 +6,9 @@
     &__title{
         margin-top: 122px;
         font-size: 61px;
+        &_active{
+            animation: headShake 1s;
+        }
     }
     &__descr{
         margin-top: 25px;
@@ -245,6 +248,9 @@
 
 .main-logo{
     margin-top: 32px;
+    &_active{
+        animation: shakeY 1s;
+    }
 }
 
 .navigation{
